@@ -13,6 +13,7 @@
     let showInteractive = $state(false);
     let reflectionText = $state('');
     let reflectionSaved = $state(false);
+    let finalChoice = $state(null);
     
     let typewriterText = $state('');
     let typewriterInterval = $state(null);
@@ -124,7 +125,15 @@
     }
     
     function showConclusion() {
+        document.getElementById('choice-buttons').style.display = 'none';
         document.getElementById('conclusion').style.display = 'block';
+    }
+    
+    function selectVerdict(verdict) {
+        finalChoice = verdict;
+        document.getElementById('choice-buttons').style.display = 'none';
+        document.getElementById('outcome-container').style.display = 'block';
+        localStorage.setItem('finalVerdict', verdict);
     }
 </script>
 
@@ -257,21 +266,48 @@
             
             <div class="final-choice">
                 <p class="choice-prompt">Based on your analysis, what is your verdict on Elena Clark?</p>
-                <div class="choice-buttons">
-                    <button class="choice-btn yes" onclick={showConclusion}>
+                <div id="choice-buttons" class="choice-buttons">
+                    <button class="choice-btn yes" onclick={() => selectVerdict('AI')}>
                         YES – SHE USED AI
                     </button>
-                    <button class="choice-btn no" onclick={showConclusion}>
+                    <button class="choice-btn no" onclick={() => selectVerdict('INNOCENT')}>
                         NO – SHE IS INNOCENT
                     </button>
-                    <button class="choice-btn insufficient" onclick={showConclusion}>
+                    <button class="choice-btn insufficient" onclick={() => selectVerdict('INSUFFICIENT')}>
                         INSUFFICIENT EVIDENCE
                     </button>
                 </div>
             </div>
             
-            <div id="conclusion" class="conclusion" style="display: none;">
-                <p>"The alibi tapes never lie, but they never tell the whole truth. I was asked to find a machine behind the words. Instead, I found a sister. Elena Clark died on April 4, 2022. Her twin, Marisol, has been using AI to sustain her identity ever since. The texts, the emails, the cancelled events—all of them were recorded over a silence no one was meant to break. Forensic linguistics can tell you who didn't write something. It cannot tell you what to do with the truth when you find it."</p>
+            <div id="outcome-container" class="outcome-container" style="display: none;">
+                {#if finalChoice === 'AI'}
+                    <div class="court-ruling">
+                        <div class="ruling-header">OFFICIAL RULING</div>
+                        <p>The literary board has determined that Elena Clark utilized artificial intelligence in the composition of her novel "Confession". All associated royalties are forfeited, and the work has been stricken from her official bibliography. The investigation did not uncover the identity fraud.</p>
+                    </div>
+                    <div class="star-rating">★★☆☆☆</div>
+                    <div class="thoughtful-comment">
+                        <p>"You caught the machine. The AI fragments were flagged, the stylistic markers logged. But by focusing only on the words, you missed the writer. Elena has been gone for four years, and you never asked who was really at the keyboard. A correct answer to the wrong question."</p>
+                    </div>
+                {:else if finalChoice === 'INNOCENT'}
+                    <div class="court-ruling">
+                        <div class="ruling-header">OFFICIAL RULING</div>
+                        <p>Elena Clark is acquitted of all AI-plagiarism charges. The evidence was deemed inconclusive, and her literary reputation remains intact. No further investigation into the authorship of the fragments will be pursued.</p>
+                    </div>
+                    <div class="star-rating">★☆☆☆☆</div>
+                    <div class="thoughtful-comment">
+                        <p>"You trusted the human voice completely. You saw the warmth in the morning chat, the clumsiness of the handwritten note, and you believed. But the alibi tapes were lying. Your empathy protected a ghost while a sister's secret stayed buried beneath the waves."</p>
+                    </div>
+                {:else if finalChoice === 'INSUFFICIENT'}
+                    <div class="court-ruling">
+                        <div class="ruling-header">OFFICIAL RULING</div>
+                        <p>Due to insufficient evidence, no formal charges are filed. However, in a closed hearing, Marisol Clark submitted a written confession. She admitted to accidentally causing Elena Clark's death on April 4, 2022, and subsequently using AI to assume her sister's identity. The confession has been sealed. Marisol Clark awaits a separate trial for involuntary manslaughter and fraud.</p>
+                    </div>
+                    <div class="star-rating">★★★☆☆</div>
+                    <div class="thoughtful-comment">
+                        <p>"You refused to simplify. You felt the weight of the fragments—the human warmth and the AI chill—and you admitted you couldn't be sure. That doubt was the key. The truth was never in the binary; it was in the silence between two sisters. The alibi tapes have spoken. You listened."</p>
+                    </div>
+                {/if}
             </div>
             
             <button class="restart-btn" onclick={restart}>RESTART INVESTIGATION</button>
@@ -760,6 +796,53 @@
     .conclusion p {
         line-height: 1.8;
         font-style: italic;
+    }
+    
+    .outcome-container {
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    .court-ruling {
+        background: #f5e6d3;
+        color: #1a1a1a;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-left: 4px solid #8b0000;
+    }
+    
+    .ruling-header {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #8b0000;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .court-ruling p {
+        font-family: 'Courier New', Courier, monospace;
+        line-height: 1.7;
+    }
+    
+    .star-rating {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #c9c900;
+        letter-spacing: 10px;
+    }
+    
+    .thoughtful-comment {
+        background: rgba(40,40,40,0.8);
+        border: 1px solid #444;
+        padding: 20px;
+        font-style: italic;
+        line-height: 1.7;
+    }
+    
+    .thoughtful-comment p {
+        margin: 0;
     }
     
     .restart-btn {
