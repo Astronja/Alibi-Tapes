@@ -68,9 +68,9 @@ const caseData = [
     {
         id: 7,
         context: "Exhibit 7 – Handwritten note recovered from Elena's study.",
-        fragment: "Monday to Friday:\nTalk to mom and dad – 9 A.M.\nBreakfast alone\nWrite from 10–1\nWalk at 4 with Marisol\nNo calls after 8.",
+        fragment: "Monday to Friday:\nTalk to mom and dad – 9 A.M.\nBreakfast\nWrite from 10–1\nWalk at 4 with Marisol\nNo calls after 8.",
         truth: "HUMAN",
-        forensic: "Handwriting analysis: 78% match to Marisol Clark's exemplar, not Elena's. The 'd' and 'w' downstrokes are consistent with Marisol's known style. Elena never maintained a rigid schedule, there is no reason for her to write this.",
+        forensic: "A written piece suggests human writing. However, Elena never maintained a rigid schedule, there is no reason for her to write this.",
         narrative: "Why would Elena need a script to be herself? Unless the person reading this note isn't Elena."
     },
     {
@@ -78,12 +78,12 @@ const caseData = [
         context: "Exhibit 8 – Final chapter of \"Confession\", published 2025.",
         fragment: "\"I dream of the ocean, every single night. The water was grey but not blue, and it has arms, stretching out the surface. I see her struggling, desperate face beneath the surface, but my attempt to reach seems pale and weak. This is a confession that has no recipient.\"",
         truth: "HUMAN",
-        forensic: "The imgery of drownig feels absurdly real...",
+        forensic: "The imgery of drownig feels absurdly real, as if she actually experienced... There is no indicator of AI.",
         narrative: "This is the last piece of material."
     }
 ];
 
-const groundTruth = ['AI', 'HUMAN', 'HUMAN', 'AI', 'HUMAN', 'AI', 'HUMAN'];
+const groundTruth = ['AI', 'HUMAN', 'HUMAN', 'HUMAN', 'HUMAN', 'AI', 'HUMAN'];
 
 function createGameStore() {
     const { subscribe, set, update } = writable({
