@@ -739,9 +739,9 @@
     }
     
     .choice-btn.insufficient {
-        background: #2a2a2a;
-        border-color: #888;
-        color: #888;
+        background: #4a4a1a;
+        border-color: #c9c900;
+        color: #c9c900;
     }
     
     .choice-btn:hover {

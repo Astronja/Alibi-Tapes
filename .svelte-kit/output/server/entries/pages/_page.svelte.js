@@ -5,7 +5,7 @@ var groundTruth = [
 	"AI",
 	"HUMAN",
 	"HUMAN",
-	"AI",
+	"HUMAN",
 	"HUMAN",
 	"AI",
 	"HUMAN"
