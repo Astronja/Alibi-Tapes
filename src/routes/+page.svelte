@@ -250,7 +250,6 @@
                     <button class="continue-btn" onclick={continueToNext}>
                         {currentCaseNum === 8 ? 'PROCEED TO VERDICT' : 'CONTINUE TO NEXT CASE'}
                     </button>
-                    <button class="restart-btn case-restart" onclick={restart}>RESTART INVESTIGATION</button>
                 </div>
             {/if}
         </div>
@@ -309,9 +308,8 @@
                         <p>"You weren't sure. That doubt was the truth. You let the confession speak."</p>
                     </div>
                 {/if}
+                <button class="restart-btn" onclick={restart}>RESTART INVESTIGATION</button>
             </div>
-            
-            <button class="restart-btn" onclick={restart}>RESTART INVESTIGATION</button>
         </div>
     {:else if currentView === 'research'}
         <div class="research-page">
