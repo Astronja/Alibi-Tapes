@@ -285,27 +285,27 @@
                         <div class="ruling-header">OFFICIAL RULING</div>
                         <p>The literary board has determined that Elena Clark utilized artificial intelligence in the composition of her novel "Confession". All associated royalties are forfeited, and the work has been stricken from her official bibliography. The investigation did not uncover the identity fraud.</p>
                     </div>
-                    <div class="star-rating">★★☆☆☆</div>
+                    <div class="star-rating">★★☆</div>
                     <div class="thoughtful-comment">
-                        <p>"You caught the machine. The AI fragments were flagged, the stylistic markers logged. But by focusing only on the words, you missed the writer. Elena has been gone for four years, and you never asked who was really at the keyboard. A correct answer to the wrong question."</p>
+                        <p>"You caught the AI, but left with a story unrevealed, perhaps forever."</p>
                     </div>
                 {:else if finalChoice === 'INNOCENT'}
                     <div class="court-ruling">
                         <div class="ruling-header">OFFICIAL RULING</div>
                         <p>Elena Clark is acquitted of all AI-plagiarism charges. The evidence was deemed inconclusive, and her literary reputation remains intact. No further investigation into the authorship of the fragments will be pursued.</p>
                     </div>
-                    <div class="star-rating">★☆☆☆☆</div>
+                    <div class="star-rating">★☆☆</div>
                     <div class="thoughtful-comment">
-                        <p>"You trusted the human voice completely. You saw the warmth in the morning chat, the clumsiness of the handwritten note, and you believed. But the alibi tapes were lying. Your empathy protected a ghost while a sister's secret stayed buried beneath the waves."</p>
+                        <p>"You trusted the human warmth, but that warmth was a lie and you have never noticed."</p>
                     </div>
                 {:else if finalChoice === 'INSUFFICIENT'}
                     <div class="court-ruling">
                         <div class="ruling-header">OFFICIAL RULING</div>
-                        <p>Due to insufficient evidence, no formal charges are filed. However, in a closed hearing, Marisol Clark submitted a written confession. She admitted to accidentally causing Elena Clark's death on April 4, 2022, and subsequently using AI to assume her sister's identity. The confession has been sealed. Marisol Clark awaits a separate trial for involuntary manslaughter and fraud.</p>
+                        <p>Due to insufficient evidence, no formal charges are filed regarding AI-Plagiarism. However, in a closed hearing, Marisol Clark submitted a written confession. She admitted to accidentally causing Elena Clark's death on April 4, 2022, and subsequently using AI to assume her sister's identity. The confession has been sealed. Marisol Clark awaits a separate trial for involuntary manslaughter and fraud.</p>
                     </div>
-                    <div class="star-rating">★★★☆☆</div>
+                    <div class="star-rating">★★★</div>
                     <div class="thoughtful-comment">
-                        <p>"You refused to simplify. You felt the weight of the fragments—the human warmth and the AI chill—and you admitted you couldn't be sure. That doubt was the key. The truth was never in the binary; it was in the silence between two sisters. The alibi tapes have spoken. You listened."</p>
+                        <p>"You weren't sure. That doubt was the truth. You let the confession speak."</p>
                     </div>
                 {/if}
             </div>
