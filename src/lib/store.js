@@ -42,53 +42,44 @@ const caseData = [
     {
         id: 5,
         context: "Exhibit 5 – Deleted Facebook post by Dale Rooney, April 5, 8:43 AM.",
-        fragment: "\"Okay weird one. Saw the Clark twins heading out on their boat yesterday morning. Elena was wearing that pink swimsuit she always posts in. Cute. Only one came back in the evening. Thought it was Elena at first, obviously, 'cause she's the famous one and they're identical. But she had a dark blue swimsuit on, not the pink one, and she was super out of it. Didn't wave, didn't smile, barely looked at me. I said 'Hey Elena, where's Marisol?' and she just mumbled something about a friend's place. I dunno. Twins, but the outfit swap is kinda strange, right? Hope everything's okay.\"",
+        fragment: "\"I saw the Clark twins taking the boat yesterday morning, Elena was wearing that pink swimsuit she always posts in. I only saw one of them returning to the beach tho, I thought it was Elena but she was wearing in blue. Maybe she changed her swimsuit? She also wasn't that expressive as she usually does. I don't know, things doesn't feel right.",
         truth: "HUMAN",
-        forensic: "Conversational, rich in sensory memory (swimsuit colors, lack of wave). The twin confusion hinges on a concrete discrepancy: the swimsuit change. Elena was seen in pink; the woman who returned wore navy—Marisol's known preference. The post was deleted after a DM from 'EClark_Official' at 9:12 AM urging removal. That account is the same one used to send the AI evening chat.",
+        forensic: "No comments as it is not a piece of Clark's writing, and it's clearly not AI. This is getting beyond just checking AI plagiarism.",
         interactiveType: "dm",
         interactiveContent: {
             buttonLabel: "View the deleted DM",
-            reveal: "EClark_Official: 'We appreciate your concern, but please take the post down. It is a privacy. '\n\nSent 29 minutes after Dale posted.\n\nThe speed of the response suggests urgency. Marisol wasn't just erasing evidence—she was doing it in real time."
+            reveal: "EClark_Official: 'We appreciate your concern, but please take the post down. It is a privacy. '\n\nSent 29 minutes after Dale posted.\n\nThe speed of the response suggests urgency."
         },
-        narrative: "Marisol returned alone, wearing her own swimsuit. She tried to erase the evidence of her mistake."
+        narrative: "Things are getting weird, what happened to the sisters when they went off-shore?"
     },
     {
         id: 6,
         context: "Exhibit 6 – Email from Elena Clark to Bayview Charity, April 5, 2022, 10:14 AM.",
         fragment: "Subject: Regrettable absence. Dear Committee, I must unfortunately decline participation in the April 6th benefit reading. Due to unforeseen personal circumstances, I am unable to fulfill this commitment. I apologize for any inconvenience this may cause. Sincerely, Elena Clark.",
         truth: "AI",
-        forensic: "Generic hedging: 'unforeseen personal circumstances'. No specific reason. Stylometric variance of sentence lengths: 2.1 (extremely uniform). Elena Clark had never cancelled a charity event in six years. This email was sent 13 hours after the AI chat to the mother.",
+        forensic: "Apart from the textual analysis, Elena Clark had never cancelled a charity event in the past decade. This email was sent 13 hours after the suspicious chat with mom.",
         interactiveType: "timeline",
         interactiveContent: {
             buttonLabel: "View writing timeline",
-            reveal: "March 31, 4 PM: Blog post about fishing trip.\nApril 4, 9 AM: Morning chat to mother.\nApril 4, 9 PM: AI-generated message to mother.\nApril 5, 8 AM: Marina witness post.\nApril 5, 10 AM: AI rejection letter.\n\nThis fragment is the last known public human writing by Elena Clark."
+            reveal: "March 31, 4 PM: Blog post about fishing trip.\nApril 4, 9 AM: Morning chat to mother.\nApril 4, 9 PM: Suspicious message to mother.\nApril 5, 8 AM: Marisol witness post.\nApril 5, 10 AM: AI rejection letter."
         },
-        narrative: "The impersonator is systematically erasing Elena's public presence. But they cannot erase the witness."
+        narrative: "This is definitely NOT Elena speaking..."
     },
     {
         id: 7,
         context: "Exhibit 7 – Handwritten note recovered from Elena's study.",
-        fragment: "Daily rhythm – Monday to Friday:\nTalk to mom and dad – 9 A.M.\nBreakfast alone\nWrite from 10–1\nWalk at 4\nNo calls after 8.",
+        fragment: "Monday to Friday:\nTalk to mom and dad – 9 A.M.\nBreakfast alone\nWrite from 10–1\nWalk at 4 with Marisol\nNo calls after 8.",
         truth: "HUMAN",
-        forensic: "Handwriting analysis: 78% match to Marisol Clark's exemplar, not Elena's. The 'd' and 'w' downstrokes are consistent with Marisol's known style. The content is suspicious: Elena never maintained a rigid schedule. This is a performance guide—someone learning to inhabit Elena's life. It is human, but the author is the sister.",
-        interactiveType: "toggle",
-        interactiveContent: {
-            buttonLabel: "Show handwriting comparison overlay",
-            reveal: "Key letter discrepancies:\n\nThe 'd' loops are closed (Marisol's trait) vs Elena's open loops.\n\nThe 'w' terminates with an upward hook, found in Marisol's signed statement from 2018.\n\nThe writing is careful, controlled—a deliberate imitation."
-        },
+        forensic: "Handwriting analysis: 78% match to Marisol Clark's exemplar, not Elena's. The 'd' and 'w' downstrokes are consistent with Marisol's known style. Elena never maintained a rigid schedule, there is no reason for her to write this.",
         narrative: "Why would Elena need a script to be herself? Unless the person reading this note isn't Elena."
     },
     {
         id: 8,
         context: "Exhibit 8 – Final chapter of \"Confession\", published 2025.",
-        fragment: "\"I dream of the ocean every night. In the dream, the water is not blue but grey, and it has hands. I see her face beneath the surface, and I reach for her, but my arms are stone. I wake with salt on my lips, though I am miles from the sea. I wrote this book for her, but she will never read it. That is the confession I cannot make.\"",
+        fragment: "\"I dream of the ocean, every single night. The water was grey but not blue, and it has arms, stretching out the surface. I see her struggling, desperate face beneath the surface, but my attempt to reach seems pale and weak. This is a confession that has no recipient.\"",
         truth: "HUMAN",
-        forensic: "This is the only human passage in the novel not written by Elena. Stylometric match: 94% Marisol Clark. The imagery of drowning, guilt, and a silent confession is autobiographical. Marisol poured her truth into the one place she hoped no one would look—inside her sister's book.",
-        interactiveType: "reflection",
-        interactiveContent: {
-            prompt: "Given that this fragment is human but not Elena, would you change your decision criteria? Why?"
-        },
-        narrative: "The alibi tapes were never about AI. They were about a sister's silence, and the words that broke through it."
+        forensic: "The imgery of drownig feels absurdly real...",
+        narrative: "This is the last piece of material."
     }
 ];
 
