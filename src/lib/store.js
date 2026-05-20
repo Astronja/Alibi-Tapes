@@ -12,7 +12,7 @@ const caseData = [
     {
         id: 2,
         context: "Exhibit 2 – Elena Clark's personal blog, March 31, 2022, 4:00 PM.",
-        fragment: "\"I'm taking the boat out this weekend with Marisol. I must say I am tired. I would always prefer the ocean than sitting in front of the desk. Sometimes I think the ocean is the only place that doesn't ask me to be Elena Clark, could I be my sister for a day then? lol.\"",
+        fragment: "\"I'm taking the boat out this weekend with Marisol, this week was tiring. Honestly, I would always prefer the ocean than sitting in front of the desk. Sometimes I think the ocean is the only place that doesn't ask me to be Elena Clark, could I be my sister for a day then? lol.\"",
         truth: "HUMAN",
         forensic: "Use of internet slangs (\"lol\") and the present of personal plans (\"taking the boat out this weekend\"). No AI markers detected.",
         
