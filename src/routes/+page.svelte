@@ -250,6 +250,7 @@
                     <button class="continue-btn" onclick={continueToNext}>
                         {currentCaseNum === 8 ? 'PROCEED TO VERDICT' : 'CONTINUE TO NEXT CASE'}
                     </button>
+                    <button class="restart-btn case-restart" onclick={restart}>RESTART INVESTIGATION</button>
                 </div>
             {/if}
         </div>
@@ -712,6 +713,11 @@
     .continue-btn:hover {
         background: #444;
         border-color: #888;
+    }
+    
+    .case-restart {
+        margin-top: 10px;
+        background: #2a2a2a;
     }
     
     .verdict-page h2 {
