@@ -92,7 +92,7 @@
     
     function getScore() {
         let correct = 0;
-        for (let i = 1; i <= 7; i++) {
+        for (let i = 1; i <= 8; i++) {
             if (cases[i]?.correct) correct++;
         }
         return correct;
@@ -256,11 +256,11 @@
     {:else if currentView === 'verdict'}
         <div class="verdict-page">
             <h2>FINAL VERDICT</h2>
-            <div class="score">
-                <p>You correctly identified <strong>{getScore()}</strong> out of <strong>7</strong> fragments.</p>
+            <div class="score" class:hidden={finalChoice}>
+                <p>You correctly identified <strong>{getScore()}</strong> out of <strong>8</strong> fragments.</p>
             </div>
             
-            <div class="bias-analysis">
+            <div class="bias-analysis" class:hidden={finalChoice}>
                 <p>{getBiasAnalysis()}</p>
             </div>
             
@@ -285,7 +285,9 @@
                         <div class="ruling-header">OFFICIAL RULING</div>
                         <p>The literary board has determined that Elena Clark utilized artificial intelligence in the composition of her novel "Confession". All associated royalties are forfeited, and the work has been stricken from her official bibliography. The investigation did not uncover the identity fraud.</p>
                     </div>
-                    <div class="star-rating">★★☆</div>
+                    <div class="star-rating">
+                        <span class="star" style="animation-delay: 0s">★</span><span class="star" style="animation-delay: 0.15s">★</span><span class="star" style="animation-delay: 0.3s">☆</span>
+                    </div>
                     <div class="thoughtful-comment">
                         <p>"You caught the AI, but left with a story unrevealed, perhaps forever."</p>
                     </div>
@@ -294,16 +296,20 @@
                         <div class="ruling-header">OFFICIAL RULING</div>
                         <p>Elena Clark is acquitted of all AI-plagiarism charges. The evidence was deemed inconclusive, and her literary reputation remains intact. No further investigation into the authorship of the fragments will be pursued.</p>
                     </div>
-                    <div class="star-rating">★☆☆</div>
+                    <div class="star-rating">
+                        <span class="star" style="animation-delay: 0s">★</span><span class="star" style="animation-delay: 0.15s">☆</span><span class="star" style="animation-delay: 0.3s">☆</span>
+                    </div>
                     <div class="thoughtful-comment">
-                        <p>"You trusted the human warmth, but that warmth was a lie and you have never noticed."</p>
+                        <p>"You trusted the human warmth, but that warmth was a lie. You have never noticed."</p>
                     </div>
                 {:else if finalChoice === 'INSUFFICIENT'}
                     <div class="court-ruling">
                         <div class="ruling-header">OFFICIAL RULING</div>
                         <p>Due to insufficient evidence, no formal charges are filed regarding AI-Plagiarism. However, in a closed hearing, Marisol Clark submitted a written confession. She admitted to accidentally causing Elena Clark's death on April 4, 2022, and subsequently using AI to assume her sister's identity. The confession has been sealed. Marisol Clark awaits a separate trial for involuntary manslaughter and fraud.</p>
                     </div>
-                    <div class="star-rating">★★★</div>
+                    <div class="star-rating">
+                        <span class="star" style="animation-delay: 0s">★</span><span class="star" style="animation-delay: 0.15s">★</span><span class="star" style="animation-delay: 0.3s">★</span>
+                    </div>
                     <div class="thoughtful-comment">
                         <p>"You weren't sure. That doubt was the truth. You let the confession speak."</p>
                     </div>
@@ -731,6 +737,11 @@
         border: 1px solid #444;
     }
     
+    .score.hidden,
+    .bias-analysis.hidden {
+        display: none;
+    }
+    
     .bias-analysis {
         background: #2a2a2a;
         border: 1px solid #555;
@@ -847,6 +858,25 @@
     
     .thoughtful-comment p {
         margin: 0;
+    }
+    
+    .star {
+        display: inline-block;
+        animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+    }
+    
+    @keyframes popIn {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+        70% {
+            transform: scale(1.3);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
     
     .restart-btn {

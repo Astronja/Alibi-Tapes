@@ -83,7 +83,7 @@ const caseData = [
     }
 ];
 
-const groundTruth = ['AI', 'HUMAN', 'HUMAN', 'HUMAN', 'HUMAN', 'AI', 'HUMAN'];
+const groundTruth = ['AI', 'HUMAN', 'HUMAN', 'HUMAN', 'HUMAN', 'AI', 'HUMAN', 'HUMAN'];
 
 function createGameStore() {
     const { subscribe, set, update } = writable({
