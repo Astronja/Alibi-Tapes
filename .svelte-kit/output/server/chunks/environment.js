@@ -1,5 +1,5 @@
 //#region node_modules/@sveltejs/kit/src/runtime/app/paths/internal/server.js
-var base = "";
+var base = "/Alibi-Tapes";
 var assets = base;
 var app_dir = "_app";
 var initial = {
@@ -37,7 +37,7 @@ function set_public_env(environment) {
 }
 //#endregion
 //#region \0virtual:__sveltekit/environment
-var version = "1779321274076";
+var version = "1779321746177";
 var prerendering = false;
 function set_building() {}
 function set_prerendering() {
